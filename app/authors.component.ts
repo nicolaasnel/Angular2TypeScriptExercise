@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core'
 import {AuthorService} from './author.service'
+import {FavComponent} from './favourite.component';
 
 @Component({
 	selector: 'authors',
@@ -8,11 +9,12 @@ import {AuthorService} from './author.service'
 			{{ title }}
 			<ul>
 				<li *ngFor="#author of authors">
-					{{ author }}
+					{{ author }} <fav></fav>
 				</li>
 			</ul>
 		`,
-		providers: [AuthorService]
+		providers: [AuthorService],
+    directives: [FavComponent]
 })
 
 export class AuthorsComponent {
